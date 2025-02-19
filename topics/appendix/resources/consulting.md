@@ -6,7 +6,7 @@
 
 The following independent companies and individuals provide paid plugin consulting and development services.
 
-Also, consider posting requests in _#jobs_ channel on [JetBrains Platform Slack](https://plugins.jetbrains.com/slack).
+Also, consider posting requests at [JetBrains Platform Forum: Collaboration & Ideas](https://platform.jetbrains.com/c/collaboration-ideas/14).
 
 > JetBrains is not responsible for nor guarantees the performance of these independent third-party companies.
 
@@ -20,6 +20,7 @@ Also, consider posting requests in _#jobs_ channel on [JetBrains Platform Slack]
 | Tamás Balog        | [www.picimako.com][pm]                                     | Custom Plugin Development                                                    |
 | Dmitry Kandalov    | [dmitry.kandalov@gmail.com][dk]                            | Custom Plugin Development (e.g. using [LivePlugin][lp])                      |
 | Jonathan Lermitage | [jonathan@lermitage.biz][jle1]                             | Developer of [12 plugins][jle2] (e.g. [Extra Icons][jle3])                   |
+| Artsiom Chapialiou | [achapialiou@gmail.com][ac1]                               | Plugin's [author][ac2] and core developer ([Qodo][ac3], [Snyk][ac4], etc.)   |
 
 [ja]: https://www.j-a.dev
 [ja2]: https://www.plugin-dev.com
@@ -43,5 +44,9 @@ Also, consider posting requests in _#jobs_ channel on [JetBrains Platform Slack]
 [jle1]: mailto:jonathan@lermitage.biz
 [jle2]: https://plugins.jetbrains.com/author/ed9cc7eb-74f5-46c1-b0df-67162fe1a1c5
 [jle3]: https://plugins.jetbrains.com/plugin/11058-extra-icons/
+[ac1]: mailto:achapialiou@gmail.com
+[ac2]: https://plugins.jetbrains.com/vendor/ccf55862-f380-4c27-a139-7ba670cfce74
+[ac3]: https://plugins.jetbrains.com/plugin/21206-qodo-gen-formerly-codiumate
+[ac4]: https://plugins.jetbrains.com/plugin/10972-snyk-security
 
 Please [submit a PR or file a YouTrack issue](getting_help.topic) for changes or additions to this list.
