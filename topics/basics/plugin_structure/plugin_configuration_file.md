@@ -242,7 +242,8 @@ Attributes
 - `release-date` _(**required**)_<br/>
   Date of the major version release in the `YYYYMMDD` format.
 - `release-version` _(**required**)_<br/>
-  A major version in a special number format.
+  A major version in a specific number format, for example, `20242` for the 2024.2 major release.<br/>
+  See [`release-version` constraints](https://plugins.jetbrains.com/docs/marketplace/versioning-of-paid-plugins.html#release-version-constraints) for more details.
 - `optional` _(optional)_<br/>
   The boolean value determining whether the plugin is
   a [Freemium](https://plugins.jetbrains.com/docs/marketplace/freemium.html) plugin.<br/>
@@ -842,10 +843,11 @@ Required
 {type="narrow"}
 Attributes
 :
-- `id` _(**required**)_<br/>
+- `id` _(optional; defaults to the action class short name if not specified)_<br/>
   A unique action identifier.
-  The action identifier must be unique between different plugins.
-  Thus, it is recommended to prepend it with the value of the plugin [`<id>`](#idea-plugin__id).
+  It is recommended to specify the `id` attribute explicitly.<br/>
+  The action identifier must be unique across different plugins.
+  To ensure uniqueness, consider prepending it with the value of the plugin's [`<id>`](#idea-plugin__id).
 - `class` _(**required**)_<br/>
   The fully qualified name of the action implementation class.
 - `text` _(**required** if the action is not

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Content Updates
 
@@ -11,6 +11,19 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 <include from="snippets.md" element-id="subscribeNews"/>
 
 ## 2025
+
+### February
+{february-25}
+
+Support Channel Update
+:
+Updated support channels to the new [JetBrains Platform](https://platform.jetbrains.com) community forum.
+See the [The JetBrains Platform Gets a New Community Space](https://blog.jetbrains.com/platform/2025/02/the-jetbrains-platform-gets-a-new-community-space/) blog post for more context.
+
+Revamped Threading and Execution Context topics
+:
+Reorganized [threading](threading_model.md) and [coroutines](kotlin_coroutines.md) topics structure.
+Updated [](execution_contexts.topic) with the information about contexts available since 2024.2.
 
 ### January
 {january-25}
@@ -156,7 +169,7 @@ Minor Changes and Additions
 :
 - Clarify [the syntax highlighting](testing_highlighting.md#syntax-highlighting) test file format and test implementation initial approach.
 - Clarify referencing icons by paths and icon holder class constants in [](icons.md).
-- Add information about requirements for persistent state components to be included in [the _Settings Sync_ plugin synchronization mechanism](persisting_state_of_components.md#settings-sync-plugin).
+- Add information about requirements for persistent state components to be included in [the _Settings Sync_ plugin synchronization mechanism](persisting_state_of_components.md#backup-and-sync-plugin).
 
 ### April
 {#april-23}

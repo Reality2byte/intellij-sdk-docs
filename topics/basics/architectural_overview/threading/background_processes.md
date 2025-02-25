@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Background Processes
 
@@ -7,14 +7,14 @@
 Background process is a time-consuming computation usually executed on a background thread.
 The IntelliJ Platform executes background processes widely and provides two main ways to run them by plugins:
 - [Progress API](#progress-api) that allows for cancelling tasks and tracking their progress
-- [`Application.executeOnPooledThread()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java) methods for running simple background tasks that don't need cancellation or progress tracking
+- [`Application.executeOnPooledThread()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java) methods for running background tasks that don't need progress tracking
 
 ## Progress API
 <primary-label ref="obsolete-2024.1"/>
 
 > Plugins targeting 2024.1+ should use [Kotlin coroutines](kotlin_coroutines.md), which is a more performant solution and provides the cancellation mechanism out of the box.
 >
-> See [](coroutine_execution_contexts.md) for coroutine-based APIs to use in different contexts.
+> See [](execution_contexts.topic) for coroutine-based APIs to use in different contexts.
 >
 {style="warning" title="Use Kotlin Coroutines"}
 
@@ -165,18 +165,21 @@ Use inspection <control>Plugin DevKit | Code | Cancellation check in loops</cont
 
 ### Tracking Progress
 
-Displaying progress to the user is achieved with `ProgressIndicator` or `ProgressManager` if no indicator instance is available in the current context.
+Displaying progress to the user is achieved with:
+- `ProgressIndicator` - if available in the current context
+- `ProgressManager` - if no indicator instance is available in the current context
 
-To report progress, use the following methods:
-- `setText(String)` – sets text above the progress bar
-- `setText2(String)` – sets text under the progress bar
+To report progress with `ProgressIndicator`, use the following methods:
+- `setText(String)` – sets the progress text displayed above the progress bar
+- `setText2(String)` – sets the progress details text displayed under the progress bar
 - `setFraction(double)` – sets the progress fraction: a number between 0.0 (nothing) and 1.0 (all) reflecting the ratio of work that has already been done.
   Only works for determinate indicator.
   The fraction should provide the user with an estimation of the time left.
   If this is impossible, consider making the progress indeterminate.
 - `setIndeterminate(boolean)` – marks the progress indeterminate (for processes that can't estimate the amount of work to be done) or determinate (for processes that can display the fraction of the work done using `setFraction(double)`).
 
-<include from="snippets.md" element-id="missingContent"/>
+`ProgressManager` allows for reporting progress texts through `progress()`/`progress2()` methods, which are counterparts of `ProgressIndicator.setText()`/`setText2()`.
+In addition, it exposes the `ProgressIndicator.getProgressIndicator()` method for getting an indicator instance associated with the current thread.
 
 ## `ProcessCanceledException` and Debugging
 
@@ -204,3 +207,5 @@ Action disabling throwing `ProcessCanceledException`.
 
 </tab>
 </tabs>
+
+<include from="snippets.md" element-id="missingContent"/>

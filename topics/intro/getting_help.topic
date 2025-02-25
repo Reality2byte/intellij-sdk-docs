@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/html-entities.dtd">
 
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
@@ -27,8 +27,36 @@
             文档不全？或者开发插件的时候被问题卡住了？请阅读下面各种情况下获得支持的所有方式。
         </p>
         <p>
-            请在所有的交流中使用英语。
+            请在所有的交流中（邮件，Bug 报告等）使用英语。
         </p>
+    </chapter>
+
+
+    <chapter title="Problems with Code - Support Issues" id="problems-with-code-support-issues" switcher-key="English">
+        <tip>
+            <p>Please see <a href="faq.md">Plugin Development FAQ</a> and <a href="explore_api.md">Explore the IntelliJ
+                Platform API</a> for tips &amp; tricks.</p>
+        </tip>
+        <p>For questions, problems, or other discussions about plugin development itself
+            (rather than the content of this guide),
+            use our <a href="https://platform.jetbrains.com">JetBrains Platform</a> community forum.
+            The forum is monitored by JetBrains team members.</p>
+        <p>Of course, all raised questions will be used to try and improve this guide.</p>
+    </chapter>
+
+    <chapter title="代码方面的问题-支持问题" id="problems-with-code-support-issues-CN" switcher-key="Chinese">
+
+        <tip>
+            <p>请参考 <a href="faq.md">插件开发常见问题问答</a> 和 <a href="explore_api.md">探索 IntelliJ Platform API</a>
+                来获取相关技巧和窍门。</p>
+        </tip>
+
+        <p> 对于与插件开发本身有关的问题,难题或者讨论（和本指南内容无关），请使用我们的
+            <a href="https://platform.jetbrains.com">JetBrains Platform</a> 社区论坛。请注意这个论坛只支持英文沟通，
+            请不要在帖子和聊天中使用中文。
+            JetBrains团队成员会关注此论坛。</p>
+        <p>当然，所有收到的问题都将用于尝试和改进本指南。</p>
+
     </chapter>
 
 
@@ -90,42 +118,6 @@
         </note>
     </chapter>
 
-
-    <chapter title="Problems with Code - Support Issues" id="problems-with-code-support-issues" switcher-key="English">
-        <tip>
-            <p>Please see <a href="faq.md">Plugin Development FAQ</a> and <a href="explore_api.md">Explore the IntelliJ
-                Platform API</a> for tips &amp; tricks.</p>
-        </tip>
-        <p>For questions and problems related to plugin development itself (rather than the content of this guide), you
-            have several options:</p>
-        <list>
-            <li><a href="https://plugins.jetbrains.com/slack/">#intellij-platform on JetBrains Platform Slack</a> - this
-                chat room is a great place to ask questions about extending JetBrains products, with answers coming from
-                both JetBrains team members and members of the community
-            </li>
-            <li>
-                <a href="https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development">Plugin
-                    Development Forum</a> - post a message to the support forum.
-                It is regularly updated with answers by JetBrains team members.
-            </li>
-        </list>
-        <p>Of course, all raised questions will be used to try and improve this guide.</p>
-    </chapter>
-
-    <chapter title="代码方面的问题-支持问题" id="problems-with-code-support-issues-CN" switcher-key="Chinese">
-
-        <p>
-            请参考 <a href="faq.md">插件开发常见问题问答</a> 和 <a href="explore_api.md">探索 IntelliJ Platform API</a>
-            来获取相关技巧和窍门。
-            对于与插件开发本身有关的问题和难题（和本指南内容无关），你有几个选择：
-            JetBrains Platform Slack上的#intellij-platform — 这个聊天室是讨论有关扩展JetBrains产品问题的好地方，解答来自JetBrains团队成员和社区成员。
-        </p>
-        <p>
-            <a href="https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development">插件开发论坛</a>
-            - 在支持论坛上发布消息。JetBrains团队成员会定期更新并解答问题。
-            当然，所有收到的问题都将用于尝试和改进本指南。</p>
-
-    </chapter>
 
     <chapter title="Problems with Products" id="problems-with-products" switcher-key="English">
         <p>If you have a problem with an IntelliJ Platform-based product, such as IntelliJ IDEA, WebStorm, Rider, etc.,
