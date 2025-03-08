@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Glossary
 
@@ -10,24 +10,25 @@ See also [Oracle's Java Technology Glossary](https://www.oracle.com/java/technol
 
 Abstract Syntax Tree _(AST)_
 : The [Abstract Syntax Tree](implementing_parser_and_psi.md) represents the structure of source input files.
-&rarr;&nbsp;_Program Structure Interface_
+<br/>&rarr;&nbsp;_Program Structure Interface_
 
 Annotator
 : Provides [semantic highlighting](syntax_highlighting_and_error_highlighting.md) based on underlying &rarr;&nbsp;_Program Structure Interface_ elements.
-&rarr;&nbsp;_Inspection_
+<br/>&rarr;&nbsp;_Inspection_
 
 ## B
 
 Blocking Context
-: Executing in the [blocking context](coroutine_execution_contexts.md#blocking-context) means executing tasks on a thread without access to a coroutine context.
-&rarr;&nbsp;_Suspending Context_
-&rarr;&nbsp;_Coroutine_
+: Executing in the [Blocking Context](execution_contexts.topic#blocking-context) means executing tasks on a thread without access to a coroutine context.
+<br/>&rarr;&nbsp;_Suspending Context_
+<br/>&rarr;&nbsp;_Coroutine Execution Context_
+<br/>&rarr;&nbsp;_Coroutine_
 
 ## C
 
 `CancellationException` _(CE)_
 : `java.util.concurrent.CancellationException`, `kotlin.coroutines.cancellation.CancellationException` (typealias in stdlib), `kotlinx.coroutines.CancellationException` (typealias in kotlinx-coroutines)
-&rarr;&nbsp;_ProcessCanceledException_
+<br/>&rarr;&nbsp;_ProcessCanceledException_
 
 Coroutine
 : A [Kotlin coroutines](kotlin_coroutines.md) execution unit allowing for handling concurrency and asynchronous tasks efficiently with a sequential/imperative code style.
@@ -36,11 +37,14 @@ Coroutine Dispatcher
 : Part of the coroutine context.
 Determines a thread or a thread pool the corresponding coroutine is executed on.
 See [](coroutine_dispatchers.md) for more details.
-&rarr;&nbsp;_Coroutine_
+<br/>&rarr;&nbsp;_Coroutine_
+
+Coroutine Execution Context
+: Executing in the [Coroutine Execution Context](execution_contexts.topic#blocking-context) means executing code (suspending or non-suspending/blocking) from a coroutine.
 
 Coroutine Scope
 : [Coroutine scopes](coroutine_scopes.md) define the lifetime of coroutines and ensure proper handling of coroutine cancellations and structured concurrency.
-&rarr;&nbsp;_Coroutine_
+<br/>&rarr;&nbsp;_Coroutine_
 
 ## D
 
@@ -74,7 +78,7 @@ Gradle Build Script
 
 Inspection
 : Supports configurable [semantic highlighting](code_inspections_and_intentions.md).
-&rarr;&nbsp;_Annotator_
+<br/>&rarr;&nbsp;_Annotator_
 
 Intention
 : Provides an [automated fix](code_inspections_and_intentions.md) for commonly encountered code problems.
@@ -107,16 +111,17 @@ Non-Blocking Read Action _(NBRA)_
 
 `ProcessCanceledException` _(PCE)_
 : [`ProcessCanceledException`](%gh-ic%/platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java) An exception indicating that the currently running operation was terminated and should finish as soon as possible.
-&rarr;&nbsp;_CancellationException_
+<br/>&rarr;&nbsp;_CancellationException_
 
 Program Structure Interface _(PSI)_
-: The [Program Structure Interface](psi.md) represents a syntactic and semantic code model of the source input files. &rarr;&nbsp;_Abstract Syntax Tree_ &rarr;&nbsp;_Stubs_
+: The [Program Structure Interface](psi.md) represents a syntactic and semantic code model of the source input files.
+<br/>&rarr;&nbsp;_Abstract Syntax Tree_ &rarr;&nbsp;_Stubs_
 
 ## R
 
 Read Action _(RA)_
 : Allows accessing code-related data structures for reading purposes. See also [](threading_model.md).
-&rarr;&nbsp;_Non-Blocking Read Action_ &rarr;&nbsp;_Write Action_
+<br/>&rarr;&nbsp;_Non-Blocking Read Action_ &rarr;&nbsp;_Write Action_
 
 Run Configuration _(RC)_
 : A [Run Configuration](run_configurations.md) allows running external processes from within the IDE.
@@ -130,9 +135,10 @@ Stubs
 : A subset of a &rarr;&nbsp;_Program Structure Interface_ tree in a binary serialized compact format, see [](stub_indexes.md).
 
 Suspending Context
-: Executing in the [suspending context](coroutine_execution_contexts.md#suspending-context) means executing tasks in Kotlin coroutines.
-&rarr;&nbsp;_Blocking Context_
-&rarr;&nbsp;_Coroutine_
+: Executing in the [Suspending Context](execution_contexts.topic#suspending-context-coroutines) means executing tasks in Kotlin coroutines.
+<br/>&rarr;&nbsp;_Blocking Context_
+<br/>&rarr;&nbsp;_Coroutine Execution Context_
+<br/>&rarr;&nbsp;_Coroutine_
 
 Symbol
 : A semantic element in some model, e.g., language or framework model, see [](symbols.md).
@@ -157,18 +163,18 @@ Virtual File System _(VFS)_
 
 Write Action _(WA)_
 : Allows accessing code-related data structures for writing purposes. See also [](threading_model.md).
-&rarr;&nbsp;_Read Action_
+<br/>&rarr;&nbsp;_Read Action_
 
 Write Allowing Read Action _(WARA)_
 : A coroutine &rarr;&nbsp;_Read Action_ that is canceled by an incoming &rarr;&nbsp;_Write Action_.
 See [](coroutine_read_actions.topic#coroutine-read-actions-api) for details.
-&rarr;&nbsp;_Suspending Context_
-&rarr;&nbsp;_Coroutine_
+<br/>&rarr;&nbsp;_Suspending Context_
+<br/>&rarr;&nbsp;_Coroutine_
 
 Write Blocking Read Action _(WBRA)_
 : A coroutine &rarr;&nbsp;_Read Action_ that blocks incoming &rarr;&nbsp;_Write Action_.
 See [](coroutine_read_actions.topic#coroutine-read-actions-api) for details.
-&rarr;&nbsp;_Suspending Context_
-&rarr;&nbsp;_Coroutine_
+<br/>&rarr;&nbsp;_Suspending Context_
+<br/>&rarr;&nbsp;_Coroutine_
 
 <include from="snippets.md" element-id="missingContent"/>

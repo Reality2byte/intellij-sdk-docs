@@ -127,6 +127,8 @@ The described lock characteristics conclude the following:
 - multiple threads can read data at the same time
 - once a thread acquires the write lock, no other threads can read or write data
 
+Note that acquiring write locks is prioritized over read locks.
+
 Acquiring and releasing locks explicitly in code would be verbose and error-prone and must never be done by plugins.
 The IntelliJ Platform enables write intent lock implicitly on EDT (see [](#locks-and-edt) for details) and provides an [API for accessing data under read or write locks](#accessing-data).
 
@@ -266,6 +268,10 @@ In all other cases, it is required to wrap read operation in a read action with 
 The read objects aren't guaranteed to survive between several consecutive read actions.
 Whenever starting a read action, check if the PSI/VFS/project/module is still valid.
 Example:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 val virtualFile = runReadAction { // read action 1
   // read a virtual file
@@ -277,6 +283,25 @@ val psiFile = runReadAction { // read action 2
   } else null
 }
 ```
+
+</tab>
+<tab title="Java" group-key="java">
+
+```java
+VirtualFile virtualFile = ReadAction.compute(() -> { // read action 1
+  // read a virtual file
+});
+// do other time-consuming work...
+PsiFile psiFile = ReadAction.compute(() -> { // read action 2
+  if (virtualFile.isValid()) { // check if the virtual file is valid
+    return PsiManager.getInstance(project).findFile(virtualFile);
+  }
+  return null;
+});
+```
+
+</tab>
+</tabs>
 
 Between executing first and second read actions, another thread could invalidate the virtual file:
 
@@ -483,11 +508,12 @@ gantt
     %% do not remove trailing space in axisFormat:
     axisFormat ‎
     section BGT
-        very long read action               : 0, 4
+        very long read action               : 0, 6
     section EDT
-        write action (waiting for the lock) : done, 1, 4
-        write action (executing)            : 4, 5
-        UI freeze                           : crit, 1, 5
+        write action (waiting for the lock) : done, 2, 6
+        write action (executing)            : 6, 8
+        UI freeze                           : crit, 2, 8
+        UI update (frozen)                  : crit, 8, 10
 ```
 
 Sometimes, it is required to run a long read action, and it isn't possible to speed it up.
@@ -502,12 +528,13 @@ gantt
     %% do not remove trailing space in axisFormat:
     axisFormat ‎
     section BGT
-        very long read action               : 0, 1
-        very long read action (2nd attempt) : 2, 5
-        RA canceled                         : milestone, crit, 0, 2
-        RA restarted from scratch           : milestone, 2, 2
+        very long read action               : 0, 2
+        very long read action (2nd attempt) : 4, 10
+        RA canceled                         : milestone, crit, 0, 4
+        RA restarted from scratch           : milestone, 4, 4
     section EDT
-        write action : 1, 2
+        write action : 2, 4
+        UI update    : 4, 6
 ```
 
 In this case, the EDT won't be blocked and the UI freeze is avoided.
