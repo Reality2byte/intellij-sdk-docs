@@ -1,8 +1,12 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Language Server Protocol (LSP)
 
 <primary-label ref="CommercialIDEs"/>
+
+<web-summary>
+Using Language Server Protocol (LSP) in IntelliJ-based IDEs to enhance development tools with language-specific features like code completion, documentation, and formatting.
+</web-summary>
 
 <link-summary>Language Server Protocol (LSP) support in IntelliJ-based IDEs</link-summary>
 
@@ -103,7 +107,7 @@ The <path>plugin.xml</path> configuration file must specify the dependency on th
 ### IDE Setup
 
 Since 2024.2, LSP API sources are provided with the `IntelliJ IDEA Ultimate sources` artifact.
-See [](tools_intellij_platform_gradle_plugin.md#attaching-sources) on how to enable downloading sources.
+See [](tools_intellij_platform_gradle_plugin.md#attaching-sources-in-the-ide) on how to enable downloading sources.
 Then, use <ui-path>Navigate | Class...</ui-path> to open the `LspServerManager` class.
 In the opened editor, invoke <control>Download IntelliJ Platform sources</control> to download and attach sources.
 
@@ -121,10 +125,15 @@ The LSP API sources are bundled in the IntelliJ IDEA Ultimate distribution and c
 
 The LSP support provided by the IntelliJ Platform covers the following features for these releases:
 
+### 2025.1
+
+- Document Link ([`textDocument/documentLink`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_documentLink))
+
 ### 2024.3
 
 - Color Preview ([`textDocument/documentColor`](https://microsoft.github.io/language-server-protocol/specification#textDocument_documentColor))
 - Document Save Notification ([`textDocument/didSave`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_didSave)) [2024.3.1]
+- Go To Type Declaration ([`textDocument/typeDefinition`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_typeDefinition)) [2024.3.1]
 
 ### 2024.2
 
